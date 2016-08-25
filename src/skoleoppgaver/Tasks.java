@@ -91,4 +91,59 @@ public class Tasks {
         }
         System.out.println();
     }
+    
+    public static void Task3_1() {
+        String lyrics = "%d bottles of beer on the wall, %d bottles of beer.\n" + 
+                        "Take one down and pass it around, %d %s of beer on the wall.";
+        
+        String lyrics_end = "No more bottles of beer on the wall, no more bottles of beer.\n" +
+                            "Go to the store and buy some more, 99 bottles of beer on the wall.";
+        
+        for(int i=99; i>0; i--) {
+            System.out.printf(lyrics, i, i, i-1, (i==2?"bottle":"bottles"));
+            System.out.println();
+            System.out.println();
+        }
+        System.out.println(lyrics_end);
+        System.out.println();
+    }
+    
+    private static int[] numbers;
+    public static void Task3_2() {
+        numbers = new int[10];
+        
+        for(int i=0; i<10; i++)
+            numbers[i] = i;
+        
+        System.out.println(java.util.Arrays.toString(numbers));
+    }
+    
+    public static void Task3_3() {
+        if(numbers == null) {
+            Task3_2();
+        }
+        
+        int[] numbers_reverse = new int[10];
+        for(int i=0; i<numbers.length; i++) {
+            numbers_reverse[i] = numbers[numbers.length - 1 - i];
+        }
+        System.out.println(java.util.Arrays.toString(numbers_reverse));
+    }
+    
+    public static void Task3_4() {
+        int a = 1;
+        int b = 2;
+        int c;
+        
+        System.out.println("A: "+a);
+        System.out.println("B: "+b);
+        System.out.println("Bytter plass...");
+        
+        c = a;
+        a = b;
+        b = c;
+        
+        System.out.println("A: "+a);
+        System.out.println("B: "+b);
+    }
 }
